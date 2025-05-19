@@ -17,6 +17,9 @@ endpoints:
       - "[STATUS] == 200"
     ui:
       hide-url: true
+      hide-hostname: true
+      hide-port: true
+      
   - name: Data Lake
     url: https://www.gologgo.com.br
     interval: 30s
