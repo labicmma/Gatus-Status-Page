@@ -1,5 +1,17 @@
+ui:
+  title: Pagina de status Painel MMA
+  logo: "https://pbs.twimg.com/profile_images/1727381913705336832/h4K-n1Nl_400x400.jpg"
+  link: "https://www.labic.net/"
+  header: Pagina de status Painel MMA
+  description: Visualização do status de saúde do sistema
 endpoints:
   - name: example
+    url: https://www.gologgo.com.br
+    interval: 30s
+    conditions:
+      - "[STATUS] == 200"
+
+  - name: example2
     url: https://www.gologgo.com.br
     interval: 30s
     conditions:
