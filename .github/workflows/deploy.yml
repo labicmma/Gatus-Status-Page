@@ -24,3 +24,10 @@ jobs:
           cd teste/Gatus-Status-Page/
           mkdir worked_ssh_github_actions
           git pull
+
+    - name: Docker run
+      run: |
+        docker stop gatus-status-page
+        docker rm gatus-status-page
+        cd .examples/docker-minimal
+        docker run -p 8080:8080 --mount type=bind,source="$(pwd)"/config.yaml,target=/config/config.yaml --name gatus-status-page twinproduction/gatus
