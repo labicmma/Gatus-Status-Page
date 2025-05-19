@@ -5,15 +5,16 @@ ui:
   header: Pagina de status Painel MMA
   description: Visualização do status de saúde do sistema
   dark-mode: false
-  
+  hide-url: true
+
 endpoints:
-  - name: example
-    url: https://www.gologgo.com.br
+  - name: Análise de sentimentos
+    url: https://kumquat-greens-ant0oksb9ct039vh.salad.cloud
     interval: 30s
     conditions:
       - "[STATUS] == 200"
 
-  - name: example2
+  - name: Data Lake
     url: https://www.gologgo.com.br
     interval: 30s
     conditions:
