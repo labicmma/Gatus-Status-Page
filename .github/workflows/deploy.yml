@@ -21,6 +21,6 @@ jobs:
         username: ${{ secrets.VPS_USER }}
         key: ${{ secrets.VPS_SSH_KEY }}
         script: |
-          cd /teste/Gatus-Status-Page/
+          cd teste/Gatus-Status-Page/
           mkdir worked_ssh_github_actions
           git pull
