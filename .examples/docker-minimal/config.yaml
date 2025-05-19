@@ -6,6 +6,8 @@ ui:
   description: Visualização do status de saúde do sistema
   dark-mode: false
   hide-url: true
+  hide-hostname: true
+  hide-port: true
 
 endpoints:
   - name: Análise de sentimentos
