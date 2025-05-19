@@ -4,6 +4,8 @@ ui:
   link: "https://www.labic.net/"
   header: Pagina de status Painel MMA
   description: Visualização do status de saúde do sistema
+  dark-mode: false
+  
 endpoints:
   - name: example
     url: https://www.gologgo.com.br
