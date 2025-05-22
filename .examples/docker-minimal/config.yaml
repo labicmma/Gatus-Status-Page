@@ -19,9 +19,9 @@ endpoints:
 
   - name: Banco Relacional
     url: tcp://labic.cx6kgyeu881p.sa-east-1.rds.amazonaws.com:5432
+    timeout: 5   # Timeout for the health check (in seconds)
+    retries: 3   # Number of retries before considering the service as down
     interval: 30s
-    conditions:
-      - "[STATUS] == 200"
 
   - name: Análise de sentimentos
     url: https://kumquat-greens-ant0oksb9ct039vh.salad.cloud
