@@ -26,7 +26,7 @@ endpoints:
       {
         "command": "nc -zv labic.cx6kgyeu881p.sa-east-1.rds.amazonaws.com 5432"
       }
-    interval: 10min
+    interval: 10m
     conditions:
       - "[CONNECTED] == true"
       - "[STATUS] == 0"
