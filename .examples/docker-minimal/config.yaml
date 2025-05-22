@@ -18,14 +18,14 @@ endpoints:
       - "[STATUS] == 200"
 
   - name: Banco Relacional
-    url: https://www.google.com.br
+    url: tcp://labic.cx6kgyeu881p.sa-east-1.rds.amazonaws.com:5432
     interval: 30s
     conditions:
       - "[STATUS] == 200"
 
   - name: Análise de sentimentos
     url: https://kumquat-greens-ant0oksb9ct039vh.salad.cloud
-    interval: 30s
+    interval: 10m
     conditions:
       - "[STATUS] == 200"
     ui:
@@ -35,7 +35,7 @@ endpoints:
 
   - name: Coleta 
     url: https://157.245.219.143
-    interval: 30s
+    interval: 5m
     conditions:
       - "[STATUS] == 200"
     ui:
@@ -45,6 +45,6 @@ endpoints:
 
   - name: Data Lake
     url: https://www.google.com.br
-    interval: 30s
+    interval: 1m
     conditions:
       - "[STATUS] == 200"
