@@ -18,10 +18,10 @@ endpoints:
       - "[STATUS] == 200"
 
   - name: Banco Relacional
-    url: "ssh://${{ secrets.VPS_HOSTINGER_HOST }}" # port is optional. Default is 22.
+    url: "ssh://${ VPS_HOSTINGER_HOST }" # port is optional. Default is 22.
     ssh:
-      username: "${{ secrets.VPS_HOSTINGER_USER }}"
-      password: "${{ secrets.VPS_HOSTINGER_SSH_KEY }}"
+      username: "${ VPS_HOSTINGER_USER }"
+      password: "${ VPS_HOSTINGER_SSH_KEY }"
     body: |
       {
         "command": "nc -zv labic.cx6kgyeu881p.sa-east-1.rds.amazonaws.com 5432"
