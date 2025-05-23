@@ -1,0 +1,57 @@
+ui:
+  title: Pagina de status Painel MMA
+  logo: "https://pbs.twimg.com/profile_images/1727381913705336832/h4K-n1Nl_400x400.jpg"
+  link: "https://www.labic.net/"
+  header: Pagina de status Painel MMA
+  description: Visualização do status de saúde do sistema
+  dark-mode: false
+  hide-url: true
+  hide-hostname: true
+  hide-port: true
+
+endpoints:
+
+  - name: Painel MMA
+    url: https://pysa.labic.net/
+    interval: 30s
+    conditions:
+      - "[STATUS] == 200"
+
+  - name: Banco Relacional
+    url: "ssh://${{ secrets.VPS_HOST }}:22" # port is optional. Default is 22.
+    ssh:
+      username: "${{ secrets.VPS_USER }}"
+      password: "${{ secrets.VPS_SSH_KEY }}"
+    body: |
+      {
+        "command": "nc -zv labic.cx6kgyeu881p.sa-east-1.rds.amazonaws.com 5432"
+      }
+    interval: 10m
+    conditions:
+      - "[CONNECTED] == true"
+      - "[STATUS] == 0"
+  - name: Análise de sentimentos
+    url: https://kumquat-greens-ant0oksb9ct039vh.salad.cloud
+    interval: 10m
+    conditions:
+      - "[STATUS] == 200"
+    ui:
+      hide-url: true
+      hide-hostname: true
+      hide-port: true
+
+  - name: Coleta 
+    url: https://157.245.219.143
+    interval: 5m
+    conditions:
+      - "[STATUS] == 200"
+    ui:
+      hide-url: true
+      hide-hostname: true
+      hide-port: true
+
+  - name: Data Lake
+    url: https://www.google.com.br
+    interval: 1m
+    conditions:
+      - "[STATUS] == 200"

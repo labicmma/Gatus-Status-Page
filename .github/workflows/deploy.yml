@@ -21,8 +21,7 @@ jobs:
         username: ${{ secrets.VPS_USER }}
         key: ${{ secrets.VPS_SSH_KEY }}
         script: |
-          cd teste/Gatus-Status-Page/
-          mkdir worked_ssh_github_actions
+          cd pagina-status/Gatus-Status-Page/
           git pull
           
     - name: Docker stop and run
@@ -32,9 +31,9 @@ jobs:
         username: ${{ secrets.VPS_USER }}
         key: ${{ secrets.VPS_SSH_KEY }}
         script: |
-          if [ "$(docker ps -q -f name=gatus-status-page)" ]; then
+          if [ "$(docker ps -q -a -f name=gatus-status-page)" ]; then
           docker stop gatus-status-page
           docker rm gatus-status-page
           fi
-          cd teste/Gatus-Status-Page/.examples/docker-minimal
+          cd pagina-status/Gatus-Status-Page/run-status/
           docker run -d -p 8080:8080 --mount type=bind,source="$(pwd)"/config.yaml,target=/config/config.yaml --name gatus-status-page twinproduction/gatus
