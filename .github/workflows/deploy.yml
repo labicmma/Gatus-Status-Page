@@ -23,6 +23,9 @@ jobs:
         script: |
           cd pagina-status/Gatus-Status-Page/
           git pull
+          cd run-status
+          export $(grep -v '^#' .env | xargs) > /dev/null 2>&1
+          envsubst < config.template.yaml > config.yaml
           
     - name: Docker stop and run
       uses: appleboy/ssh-action@v1.0.0
