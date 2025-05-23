@@ -27,9 +27,14 @@ endpoints:
         "command": "nc -zv labic.cx6kgyeu881p.sa-east-1.rds.amazonaws.com 5432"
       }
     interval: 10m
+    ui:
+      hide-url: true
+      hide-hostname: true
+      hide-port: true
     conditions:
       - "[CONNECTED] == true"
       - "[STATUS] == 0"
+
   - name: Análise de sentimentos
     url: https://kumquat-greens-ant0oksb9ct039vh.salad.cloud
     interval: 10m
@@ -55,3 +60,7 @@ endpoints:
     interval: 1m
     conditions:
       - "[STATUS] == 200"
+    ui:
+      hide-url: true
+      hide-hostname: true
+      hide-port: true

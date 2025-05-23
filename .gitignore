@@ -25,3 +25,6 @@ config/config.yml
 .github/Workflows/labeler.yml
 .github/Workflows/publish*.yml
 .github/Workflows/test*.yml
+
+#env
+*.env
