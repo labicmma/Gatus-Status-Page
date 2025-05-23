@@ -18,7 +18,7 @@ endpoints:
       - "[STATUS] == 200"
 
   - name: Banco Relacional
-    url: "ssh://${{ secrets.VPS_HOSTINGER_HOST }}:22" # port is optional. Default is 22.
+    url: "ssh://${{ secrets.VPS_HOSTINGER_HOST }}" # port is optional. Default is 22.
     ssh:
       username: "${{ secrets.VPS_HOSTINGER_USER }}"
       password: "${{ secrets.VPS_HOSTINGER_SSH_KEY }}"
@@ -41,10 +41,10 @@ endpoints:
       hide-port: true
 
   - name: Coleta 
-    url: https://157.245.219.143
+    url: http://157.245.219.143
     interval: 5m
     conditions:
-      - "[STATUS] == 200"
+      - "[STATUS] == 403"
     ui:
       hide-url: true
       hide-hostname: true
