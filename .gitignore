@@ -19,3 +19,9 @@ node_modules
 gatus
 config/config.yml
 #config.yaml
+
+#Workflows
+.github/Workflows/benchmark.yml
+.github/Workflows/labeler.yml
+.github/Workflows/publish*.yml
+.github/Workflows/test*.yml
